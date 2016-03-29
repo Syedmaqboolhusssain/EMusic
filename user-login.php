@@ -7,7 +7,7 @@
   $password=$_POST['usr_password'];
   $password_hash=md5($password);
   $query="SELECT username FROM user WHERE username='$username' AND password='$password'";
-  $query_run=$pdo->query($sql));
+  $query_run=$pdo->query($query);
   // $query_chk=mysql_num_rows($query_run);
     if (!$query_run)
       echo "Invalid Username/Password"; 
