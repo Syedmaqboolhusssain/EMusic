@@ -2,7 +2,7 @@
     <footer class="page-footer">
         <div class="footer-copyright">
             <div class="container">
-                <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">SMH Labs</a></span>
+                <span class="right"> Design and Developed by <a class="grey-text text-lighten-4">SMH Labs</a></span>
             </div>
         </div>
     </footer>
