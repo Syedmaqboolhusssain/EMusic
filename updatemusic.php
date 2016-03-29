@@ -49,7 +49,7 @@ ob_start();
           <div class="col s12 m12 18">
               <!--Input fields-->
               <div id="input-fields">
-                <h4 class="header">Add Music Details</h4>
+                <h4 class="header">Update Music Details</h4>
                 <div class="row">
                   <div class="col s12 m8 32">
                     <div class="row">
