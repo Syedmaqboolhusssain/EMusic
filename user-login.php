@@ -18,7 +18,7 @@
       // $user_name=mysql_result($query_run,0,'username');
       $_SESSION['user_name']=$row['username'];
       header('location: dashboard.php');
-    }
+    // }
   }
   // else echo "Value not set";
 ?>
