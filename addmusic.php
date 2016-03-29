@@ -12,7 +12,7 @@ include 'header.php';
         $filename=$_POST['filename'];
         $query="INSERT INTO item (name,writer,album,year,filename)
                 VALUES ('$name','$writer','$album','$year','$filename')";
-        $query_run=mysql_query($query);
+        $query_run=mysqli_query($connect,$query);
         if (!$query_run){
             echo "Query not run";
            // die();
