@@ -113,7 +113,6 @@ ob_start();
                               $year=$_POST['year'];
                               $filename=$_POST['filename'];
                               $query="UPDATE item SET name='$name',writer='$writer',album='$album',year='$year',filename='$filename' WHERE name='$name'";
-                              $query_run=mysql_query($query);
                               $query_run=mysqli_query($connect,$query);
                               if (!$query_run){
                                   echo "Query not run";
