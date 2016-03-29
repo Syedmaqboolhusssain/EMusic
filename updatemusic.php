@@ -59,10 +59,10 @@ ob_start();
                             global $id;
                             $id=$_GET['itemId'];
                             $query="SELECT * FROM item WHERE itemId='$id'";
-                            $query_run=mysql_query($query);
-                            $query_retrv=mysql_num_rows($query_run);
+                            $query_run=mysqli_query($connect,$query);
+                            $query_retrv=mysqli_num_rows($query_run);
                             if ($query_retrv){
-                              while ($row = mysql_fetch_assoc($query_run)){
+                              while ($row = mysqli_fetch_assoc($query_run)){
                       ?>
                         <div class="row">
                           <div class="input-field col s12">
@@ -114,6 +114,7 @@ ob_start();
                               $filename=$_POST['filename'];
                               $query="UPDATE item SET name='$name',writer='$writer',album='$album',year='$year',filename='$filename' WHERE name='$name'";
                               $query_run=mysql_query($query);
+                              $query_run=mysqli_query($connect,$query);
                               if (!$query_run){
                                   echo "Query not run";
                               }else
