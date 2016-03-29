@@ -15,7 +15,7 @@
       $row = $stmt->fetch(PDO::FETCH_ASSOC);;
       // $user_name=mysql_result($query_run,0,'username');
       $_SESSION['user_name']=$row['username'];
-      header('location: index.php');
+      header('location: dashboard.php');
     }
   }
   // else echo "Value not set";
