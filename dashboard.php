@@ -5,13 +5,13 @@ include 'header.php';
         // session_start();
     }
     $query="SELECT * FROM item";
-    $query_run=mysql_query($query);
-    $query_chk=mysql_num_rows($query_run);
+    $query_run=mysqli_query($connect,$query);
+    $query_chk=mysqli_num_rows($query_run);
     // die("Nai chali");
     if (isset($_GET['itemId'])) {
         $id=$_GET['itemId'];
         $query_del="DELETE FROM item WHERE itemId='$id'";
-        mysql_query($query_del);
+        $query_run=mysqli_query($connect,$query_del);
         header("location:dashboard.php");
     }
 
@@ -65,7 +65,7 @@ include 'header.php';
                     </thead>
                     <tbody>
                 <?php if ($query_chk):?>
-                    <?php while ($row = mysql_fetch_assoc($query_run)):?>
+                    <?php while ($row = mysqli_fetch_assoc($query_run)):?>
                       <tr>
                         <td><?php echo $row["name"]; ?></td>
                         <td><?php echo $row["writer"]; ?></td>
