@@ -7,17 +7,13 @@
   $password=$_POST['usr_password'];
   $password_hash=md5($password);
   $query="SELECT username FROM user WHERE username='$username' AND password='$password'";
-  $query_run=mysqli_query($query);
+  $query_run=mysqli_query($connect,$query);
   $query_chk=mysqli_num_rows($query_run);
     if (!$query_chk)
       echo "Invalid Username/Password"; 
       elseif ($query_chk) {
-        while($row = mysqli_fetch_assoc($query_run)) {
-          // $id = $row['ID'];
-         $user_name = $row['username']; 
-    }
       // $user_name=mysql_result($query_run,0,'username');
-      $_SESSION['user_name']=$user_name;
+      $_SESSION['user_name']=$username;
       header('location: index.php');
     }
   }
