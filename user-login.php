@@ -7,13 +7,14 @@
   $password=$_POST['usr_password'];
   $password_hash=md5($password);
   $query="SELECT username FROM user WHERE username='$username' AND password='$password'";
-  $query_run=mysql_query($query);
-  $query_chk=mysql_num_rows($query_run);
-    if (!$query_chk)
+  $query_run=$pdo->query($sql));
+  // $query_chk=mysql_num_rows($query_run);
+    if (!$query_run)
       echo "Invalid Username/Password"; 
-      elseif ($query_chk) {
-      $user_name=mysql_result($query_run,0,'username');
-      $_SESSION['user_name']=$user_name;
+      elseif ($query_run) {
+      $row = $stmt->fetch(PDO::FETCH_ASSOC);;
+      // $user_name=mysql_result($query_run,0,'username');
+      $_SESSION['user_name']=$row['username'];
       header('location: index.php');
     }
   }
